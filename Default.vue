@@ -12,7 +12,42 @@
         ><span class="white--text">B</span>
       </h2>
       <v-spacer></v-spacer>
-      <v-icon color="light-blue darken-2">mdi-account</v-icon>
+      <v-menu transition="slide-y-transition" left>
+        <template v-slot:activator="{ on, attrs }">
+          <v-icon v-bind="attrs" v-on="on" color="light-blue darken-2"
+            >mdi-account</v-icon
+          >
+        </template>
+        <v-list class="light-blue darken-2">
+          <v-list-item class="text-center white--text">
+            <v-list-item-title class="text-h5">Perfil</v-list-item-title>
+          </v-list-item>
+        </v-list>
+        <v-list>
+          <v-list-item class="">
+            <v-list-item-title class=""
+              ><strong>Email: </strong> aluno312020@gmail.com</v-list-item-title
+            >
+          </v-list-item>
+          <v-list-item class="">
+            <v-list-item-title class=""
+              ><strong>Matrícula: </strong>23072022</v-list-item-title
+            >
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item class="text-center" to="/Info">
+            <v-list-item-title class=""
+              >Configurações</v-list-item-title
+            >
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item class="text-center" to="/login">
+            <v-list-item-title class="error--text"
+              >Sair</v-list-item-title
+            >
+          </v-list-item>
+        </v-list>
+      </v-menu>      
     </v-app-bar>
 
     <v-navigation-drawer
